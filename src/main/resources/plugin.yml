@@ -1,6 +1,6 @@
 name: NoFarmXP
 main: space.retri.minecraft.nofarmxp.NoFarmXP
-version: 1.0
+version: 1.0.0
 api-version: '26.1.2'
 author: [Retribyte]
 description: Prevents XP drops from mobs spawned by common farms
