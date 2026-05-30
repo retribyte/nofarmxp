@@ -8,6 +8,8 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.potion.PotionEffectType;
 
 public class NoFarmXP extends JavaPlugin implements Listener {
 
@@ -35,8 +37,8 @@ public class NoFarmXP extends JavaPlugin implements Listener {
         LivingEntity entity = event.getEntity();
         if (entity.hasMetadata("noxp-spawner") 
             || (entity.hasMetadata("noxp-potion") 
-                && (event.getEntity().getKiller().getPotionEffect(PotionEffectType.BAD_OMEN) != null
-                 || event.getEntity().getKiller().getPotionEffect(PotionEffectType.TRIAL_OMEN) != null)
+                && (event.getEntity().getKiller().hasPotionEffect(PotionEffectType.BAD_OMEN)
+                 || event.getEntity().getKiller().hasPotionEffect(PotionEffectType.TRIAL_OMEN))
             )
         ) {
             event.setDroppedExp(0);
